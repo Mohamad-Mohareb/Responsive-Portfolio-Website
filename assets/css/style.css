@@ -1,0 +1,655 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --color-primary: #3e2093;
+  --color-bold: #18191A;
+  --color-white: #fff;
+  --color-body: #fff;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+body.dark {
+  --color-primary: #3e2093;
+  --color-bold: #fff;
+  --color-body: #242526;
+}
+
+body {
+  background: var(--color-body);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+}
+
+::selection {
+  background-color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-white);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CCC;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
+.contact-info .contact-form, .header .inner-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-toolbox-content, .projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title, .services-cards, .home .inner-width, .header .dark-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer .inner-width, .contact .inner-width, .my-toolbox .inner-width, .projects .inner-width, .services .inner-width, .home .inner-width, .header .inner-width {
+  max-width: 1320px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@keyframes home {
+  25% {
+    content: "A Developer";
+  }
+}
+:is(.header .logo, .navbar, .sm) a:hover {
+  color: var(--color-primary);
+}
+
+.section-title {
+  text-align: center;
+  color: var(--color-bold);
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  position: relative;
+  font-size: 26px;
+}
+.section-title::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-bold);
+  bottom: 0;
+  left: calc(50% - 40px);
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 10px;
+  background-color: var(--color-primary);
+  border: 4px solid #ddd;
+  left: calc(50% - 12px);
+  bottom: -7px;
+}
+
+.sm a {
+  font-size: 22px;
+  transition: all 0.3s linear;
+  margin: 0 10px;
+  color: var(--color-bold);
+}
+
+.message {
+  display: none;
+  color: yellow;
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+  background-color: var(--color-body);
+}
+.header .logo a {
+  font-size: 25px;
+  font-weight: var(--font-bold);
+  transition: all 0.3s linear;
+  color: var(--color-bold);
+}
+.header .navbar a {
+  font-size: 15px;
+  margin-left: 30px;
+  color: var(--color-bold);
+  font-weight: var(--font-medium);
+  transition: all 0.3s linear;
+  text-align: center;
+}
+.header .navbar a.active-link {
+  color: var(--color-primary);
+}
+.header .hamburger {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 30px;
+  display: none;
+}
+.header .hamburger span {
+  width: 100%;
+  height: 3px;
+  border-radius: 6px;
+  margin: 6px 0;
+  background-color: var(--color-bold);
+  display: block;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.3s linear;
+}
+.header .hamburger.active span:nth-child(1) {
+  top: 4px;
+  rotate: -45deg;
+}
+.header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header .hamburger.active span:nth-child(3) {
+  bottom: 14px;
+  rotate: 45deg;
+}
+.header .dark-light {
+  width: 40px;
+  height: 40px;
+}
+.header .dark-light i {
+  position: absolute;
+  font-size: 22px;
+  color: var(--color-bold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.header .dark-light i.sun {
+  opacity: 0;
+  pointer-events: none;
+}
+.header .dark-light.active i.sun {
+  opacity: 1;
+  pointer-events: auto;
+}
+.header .dark-light.active i.moon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home {
+  height: 100vh;
+  min-height: 500px;
+}
+.home .inner-width {
+  text-align: center;
+}
+.home-content h1 {
+  font-size: 60px;
+  margin-bottom: 60px;
+  color: var(--color-bold);
+}
+.home-content h1::after {
+  content: "Mohamad";
+  animation: home 10s linear infinite;
+  color: var(--color-primary);
+}
+.home-content .buttons {
+  margin-top: 60px;
+}
+.home-content .buttons a {
+  display: inline-block;
+  width: 180px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: var(--font-medium);
+  border: 2px solid var(--color-primary);
+  margin: 15px 30px;
+  padding: 14px 0;
+  border-radius: 6px;
+  transition: all 0.2s linear;
+}
+.home-content .buttons a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.services .inner-width {
+  padding: 100px 0;
+}
+.services-cards {
+  flex-wrap: wrap;
+}
+.services-cards .services-card {
+  width: 40%;
+  box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+}
+.services-cards .services-card .icon {
+  color: var(--color-bold);
+  color: var(--color-primary);
+  font-size: 3em;
+  text-align: center;
+}
+.services-cards .services-card .info {
+  text-align: center;
+  line-height: 24px;
+}
+.services-cards .services-card .info h3 {
+  color: var(--color-bold);
+  font-size: 1.4em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin: 10px 0 20px 0;
+}
+.services-cards .services-card .info p {
+  color: #999;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.projects .inner-width {
+  padding: 100px 0;
+}
+.projects .swiper {
+  max-width: 600px;
+  height: 100%;
+  padding: 0 10px 50px 10px;
+}
+.projects .swiper .swiper-slide {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  border: none;
+  background: none;
+  outline: none;
+  margin: auto;
+}
+.projects .swiper .swiper-slide .swiper-image {
+  padding: 1rem;
+}
+.projects .swiper .swiper-slide .swiper-image img {
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: 6px;
+}
+.projects .swiper .swiper-slide .swiper-info {
+  padding: 1rem;
+}
+.projects .swiper .swiper-slide .swiper-info h2 {
+  font-size: 1.3em;
+  font-weight: var(--font-bold);
+  color: var(--color-bold);
+}
+.projects .swiper .swiper-slide .swiper-info p {
+  font-size: 16px;
+  font-weight: var(--font-medium);
+  margin-top: 15px;
+  color: var(--color-bold);
+}
+.projects .swiper .swiper-slide .swiper-info .projects-software {
+  margin-top: 15px;
+}
+.projects .swiper .swiper-slide .swiper-info .projects-software span {
+  border: 2px solid var(--color-primary);
+  outline: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  padding: 6px 12px;
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+}
+.projects .swiper .swiper-slide .swiper-info .projects-software span:not(:first-child) {
+  margin-left: 8px;
+}
+.projects .swiper .swiper-slide .swiper-info .projects-btn {
+  width: 100%;
+}
+.projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title {
+  font-weight: var(--font-bold);
+  margin-top: 15px;
+  justify-content: flex-end;
+}
+.projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title a {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s linear;
+  display: inline-block;
+}
+.projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+.projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title a i {
+  margin-left: 15px;
+}
+
+.my-toolbox .inner-width {
+  padding: 100px 0;
+}
+.my-toolbox h3 {
+  color: var(--color-bold);
+  font-size: 25px;
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin: 40px 0;
+}
+.my-toolbox-content {
+  flex-wrap: wrap;
+}
+.my-toolbox-content .my-toolbox-card {
+  width: 15%;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 3em;
+  border-radius: 5px;
+  color: var(--color-primary);
+}
+.my-toolbox-content .my-toolbox-card .my-toolbox-info {
+  font-size: 16px;
+  color: var(--color-bold);
+  font-weight: var(--font-bold);
+  padding: 5px;
+}
+
+.contact .inner-width {
+  padding: 100px 0;
+}
+.contact-info {
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.contact-info .contact-icon {
+  width: calc(33% - 20px);
+  height: 160px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  color: var(--color-white);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s linear;
+}
+.contact-info .contact-icon:hover {
+  background-color: var(--color-primary);
+}
+.contact-info .contact-icon:hover a {
+  color: var(--color-white);
+}
+.contact-info .contact-icon:hover i {
+  color: var(--color-white);
+}
+.contact-info .contact-icon a {
+  color: var(--color-bold);
+  font-weight: var(--font-medium);
+}
+.contact-info .contact-icon a i {
+  display: block;
+  font-size: 40px;
+  line-height: 120px;
+  height: 100px;
+  color: var(--color-bold);
+}
+.contact-info .contact-form {
+  flex-wrap: wrap;
+  margin: 0 20px;
+}
+.contact-info .contact-form input, .contact-info .contact-form textarea {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  padding: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  color: var(--color-bold);
+  border-radius: 4px;
+}
+.contact-info .contact-form .nameZone, .contact-info .contact-form .emailZone {
+  max-width: calc(50% - 10px);
+}
+.contact-info .contact-form .messageZone {
+  min-height: 200px;
+  resize: vertical;
+}
+.contact-info .contact-form .btn {
+  width: 180px;
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: 16px;
+  border: 2px solid var(--color-primary);
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.contact-info .contact-form .btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.footer {
+  color: var(--footer-color);
+}
+.footer .inner-width {
+  padding: 80px 20px;
+  text-align: center;
+}
+.footer .copyright {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--color-bold);
+  line-height: 24px;
+}
+.footer .copyright a {
+  font-size: 16px;
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  transition: all 0.3s linear;
+}
+.footer .copyright a:hover {
+  color: var(--color-bold);
+}
+.footer .go-top {
+  position: fixed;
+  z-index: 998;
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  right: 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-body);
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  line-height: 40px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.footer .go-top a {
+  color: var(--color-bold);
+}
+.footer .go-top.show-scroll {
+  opacity: 1;
+}
+
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.3;
+  }
+}
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 2.3;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .header .inner-width, .home .inner-width, .services .inner-width, .projects .inner-width, .my-toolbox .inner-width, .contact .inner-width, .footer .inner-width {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header .inner-width, .home .inner-width, .services .inner-width, .projects .inner-width, .my-toolbox .inner-width, .contact .inner-width, .footer .inner-width {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header .inner-width, .home .inner-width, .services .inner-width, .projects .inner-width, .my-toolbox .inner-width, .contact .inner-width, .footer .inner-width {
+    max-width: 720px;
+  }
+  .header .navbar {
+    position: fixed;
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+    background-color: var(--color-body);
+    top: 80px;
+    left: -100%;
+    padding: 0;
+    transition: all 0.3s linear;
+  }
+  .header .navbar a {
+    font-size: 25px;
+    display: block;
+    margin: 30px 0;
+  }
+  .header .navbar.active {
+    left: 0%;
+  }
+  .header .hamburger {
+    display: block;
+  }
+  .services-cards .services-card {
+    width: 75%;
+  }
+  .contact-info .contact-icon {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+  .contact-info .contact-form {
+    margin: 0;
+  }
+  .contact-info .contact-form .nameZone, .contact-info .contact-form .emailZone {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header .inner-width, .home .inner-width, .services .inner-width, .projects .inner-width, .my-toolbox .inner-width, .contact .inner-width, .footer .inner-width {
+    max-width: 540px;
+  }
+  .services-cards .services-card {
+    width: 100%;
+  }
+  .my-toolbox-content .my-toolbox-card {
+    width: 40%;
+  }
+  .contact-info .contact-icon {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header .inner-width, .home .inner-width, .services .inner-width, .projects .inner-width, .my-toolbox .inner-width, .contact .inner-width, .footer .inner-width {
+    max-width: 540px;
+    margin: 0 15px;
+  }
+  .header .navbar {
+    top: 60px;
+  }
+  .projects .swiper .swiper-slide .swiper-info {
+    padding: 0.5rem;
+  }
+  .projects .swiper .swiper-slide .swiper-info h2 {
+    font-size: 1.3em;
+  }
+  .projects .swiper .swiper-slide .swiper-info p {
+    font-size: 14px;
+    font-weight: var(--font-regular);
+    margin-top: 12px;
+  }
+  .projects .swiper .swiper-slide .swiper-info .projects-software {
+    margin-top: 12px;
+  }
+  .projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title {
+    margin-top: 12px;
+  }
+  .projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title a {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .projects .swiper .swiper-slide .swiper-info .projects-btn .projects-title a i {
+    margin-left: 10px;
+  }
+  .my-toolbox h3 {
+    margin-bottom: 20px;
+  }
+  .my-toolbox-content .my-toolbox-card {
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .contact-info .contact-icon {
+    width: 100%;
+  }
+  .footer .go-top {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .message {
+    display: block;
+  }
+  body {
+    background-color: brown;
+  }
+  .header {
+    display: none;
+  }
+  .main {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
